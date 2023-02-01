@@ -1,12 +1,13 @@
 import { state } from './state.js';
 import { alarm } from './alarm.js';
+import { addZero } from './util.js';
 
 const minutesElem = document.querySelector('.time__minutes');
 const secondsElem = document.querySelector('.time__seconds');
 
 const showTime = (seconds) => {
-    minutesElem.textContent = Math.floor(seconds / 60) > 9 ? Math.floor(seconds / 60) : `0${Math.floor(seconds / 60)}`;
-    secondsElem.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
+    minutesElem.textContent = addZero(Math.floor(seconds / 60));
+    secondsElem.textContent = addZero(seconds % 60);
 }
 
 export const startTimer = () => {
