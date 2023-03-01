@@ -7,6 +7,7 @@ const navigationBtns = document.querySelectorAll('.navigation__btn');
 
 export const changeActiveBtn = (dataUse) => {
     state.status = dataUse;
+    
     for (let i = 0; i < navigationBtns.length; i++) {
         if (navigationBtns[i].dataset.use === dataUse) {
             navigationBtns[i].classList.add('navigation__btn_active')
